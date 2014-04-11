@@ -1,0 +1,19 @@
+<?php
+    class Work extends Controller
+	{
+		function __construct()
+		{
+			parent :: Controller();
+		}
+		
+		function index()
+		{
+			// DATA FOR THE PAGE
+			$data['title'] = "MadrigalDesign.com : Update News : Tutorials";
+			$data['header'] = "shared/header.php";
+			$data['page'] = "work/work_view.php";
+			
+			$this->load->view('index_tpl', $data);
+		}
+	}
+?>

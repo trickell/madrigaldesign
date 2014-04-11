@@ -1,0 +1,54 @@
+<div class="content_wrap">
+	<div class="about_col">
+		<div class="a_box a_text">
+			<p>
+				Hello! My names John Madrigal and I am a passionate web designer,
+				web developer, and script enthusiest from Bowling Green, KY. I love 
+				designing, also coding and always will.
+			</p>				
+			<p>
+				I am 24 years old and still trying to find every secret out there is in this world.
+				Just because I am a developer does not mean I do not have or enjoy other things.
+				I am decent graphic designer, photographer, gamer, and every so often I enjoy a
+				Strawberry-From-Scratch Lemonade from O'Charlies.
+			</p>
+		</div>
+		<div class="a_box">
+			<p>
+				<?php echo img_asset('myself.jpg'); ?>
+			</p>
+		</div>
+		<div class="clear"></div><hr/>
+		<div class="a_box a_text">
+			<p>
+				Here's are just a list of services I offer that I do really well at:
+			</p>
+			<div class="skill_wrap">
+				<ul>
+					<li>XHTML</li>
+					<li>HTML 4</li>
+					<li>CSS</li>
+					<li>Javascript</li>
+					<li>PHP 5</li>
+					<li>SEO</li>
+					<li>Tutoring</li>
+					<li>Flash</li>
+					<li>Python Scripting</li>
+					<li>Templates</li>
+					<li>XML</li>
+					<li>CodeIgnitor Framework Knowledge</li>
+				</ul>
+			</div>
+		</div>
+		<div class="a_box a_dl">
+			<p>
+				Looking to learn more about me? Download my resume by clicking the icon below.
+			</p>
+			<p class="r_icon">
+				<?php echo anchor('', "<h3 style='float:left;'>Resume</h3>".img_asset('resume.png')); ?>
+			</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+</div>

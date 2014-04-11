@@ -1,0 +1,34 @@
+<?php
+
+class Welcome extends Controller {
+
+	function Welcome()
+	{
+		parent::Controller();
+		
+		$this->output->enable_profiler(TRUE);
+	}
+	
+	function index()
+	{
+		// DATA FOR THE PAGE
+		$data['title'] = "Welcome To John Madrigal's Personal Portfolio";
+		$data['header'] = "general/header.php";
+		$data['page'] = "home/home_view.php";
+		
+		$this->load->view('index_template', $data);
+	}
+	
+	function port()
+	{
+		// DATA FOR THE PAGE
+		$data['title'] = "Portfolio Entries - John Madrigal's Personal Portfolio";
+		$data['header'] = "general/header.php";
+		$data['page'] = "port/port_view.php";
+		
+		$this->load->view('index_template', $data);
+	}
+}
+
+/* End of file welcome.php */
+/* Location: ./system/application/controllers/welcome.php */

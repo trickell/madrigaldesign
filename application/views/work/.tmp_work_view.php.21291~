@@ -1,0 +1,13 @@
+<div class="content_wrap">
+	<p>
+		Whoa! Hi and welcome to my personal portfolio. Also, it can be called
+		the personal portfolio of John Madrigal. All of my different
+		works can be found below. Interested in getting in contact?
+		<?php echo anchor('','Click Here'); ?>
+	</p>
+	<div class="port_wrap">
+		<div class="port_box">
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<?php
+	$row = $query->row();
+	$date = $row->B_Date;
+?>
+
+<div class="content_wrap">
+	<div class="grid_8">
+		<div class="b_box">
+			<div class="b_title">
+				<div class="date">
+					<span><?php echo date("M :", strtotime($date)); ?></span>
+					<span><?php echo date(" d", strtotime($date)); ?></span>
+				</div>
+				<div class="subject">
+					<h3><?php echo $row->B_Title.br(); ?></h3>
+					<?php 
+						echo date("Y", strtotime($date)); ?> at <?php echo date("g:i A", strtotime($date));
+						$name = $this->User_model->get_name($row->U_ID);
+						echo img_asset('post_icon.png')." Posted by ".$name;
+					?>
+				</div>
+			</div>
+			<div class="b_body">
+				<?php echo $row->B_Entry; ?>
+				<!-- This is the category and anchor for the article -->
+				<p class="b_tag">
+					Posted In: <?php echo anchor('', $row->B_Tag); ?> 
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,80 @@
+@font-face {
+        font-family: Delicious;
+        src: url('fonts/Delicious-Roman.otf');
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS";
+	font-size: 15px;
+	line-height: 1.6em;
+	color: #fff;
+}
+a{
+	padding: 4px 5px;
+	margin: 1px;
+	color: #c2ec00;
+	text-decoration: none;
+}
+img{
+	border: 0;
+}
+h1 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 3.6em;
+	color: #fff;
+}
+h3 {
+	margin: 0px;
+	font-size: 2.5em;
+	color: #fff;
+	line-height: 1.2em;
+}
+ul{ padding: 0; margin: 5px; }
+li{
+	list-style: none;
+}
+
+/****** General Terms Every Page Uses ******/
+#content{
+	position: relative;
+	width: 924px;
+	min-height: 600px;
+	margin: 0 auto;
+	top: -50px;
+	background: url('../images/c_back.png') #630000 top repeat-x;
+	border: 1px solid #c90000;
+	-moz-box-shadow: 0px 0px 30px #222;
+}
+.general_view{
+	background: url('../images/temp_site/back.png') top repeat-x #0c0c0c;
+}
+.content_wrap{
+	position: relative;
+	margin-top: 170px;
+}
+.box_head{
+	margin: 0 20px;
+	padding: 5px 20px;
+	background: #222;
+	border: 1px solid #666;
+}
+.box_pad{
+	margin: 10px;
+	padding: 10px;
+}
+.gen_box{ 
+	padding: 2px 5px;
+	background: #510505;
+	border: 1px solid #730303;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.clear{
+	clear: both;
+}
+.c_left{
+	clear: left;
+}

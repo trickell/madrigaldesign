@@ -1,0 +1,25 @@
+<?php
+
+class Welcome extends Controller {
+
+	function Welcome()
+	{
+		parent::Controller();
+		
+		//$this->output->enable_profiler(TRUE);
+	}
+	
+	function index()
+	{
+		// DATA FOR THE PAGE
+		$data['title'] = "Welcome To MadrigalDesign.com : Website Developer : Website Designer : Website Solution";
+		$data['header'] = "shared/header.php";
+		$data['page'] = "home/home_view.php";
+		
+		$this->load->view('index_tpl', $data);
+	}
+	
+}
+
+/* End of file welcome.php */
+/* Location: ./system/application/controllers/welcome.php */

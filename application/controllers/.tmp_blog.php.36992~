@@ -1,0 +1,100 @@
+<?php
+    class Blog extends Controller
+	{
+		function Blog()
+		{
+			parent :: Controller();
+			
+			//$this->output->enable_profiler(true);
+			
+			// Global Variables
+			$data['meta_description'] = "
+			<meta name=\"Description\" content=\"The blog at MadrigalDesign is filled with everything.
+			You can find articles on Technology, Entertainment, Tutorials, Site News, and World News all from this
+			blog. Its your source to keep up to date with everything and to learn more.\">
+			";
+			$this->load->vars($data);
+		}
+		
+		function index()
+		{
+			// Include Models Needed for Blog
+			$this->load->model('Blog_model');
+			$this->load->model('User_model');
+			$this->load->model('Comments_model');
+			
+			// Query Structure
+			$data['query'] = $this->Blog_model->get_all();
+			
+			// DATA FOR THE PAGE
+			$data['title'] = "The Blog at MadrigalDesign.com : Update News : Tutorials : Source for Entertainment";
+			$data['header'] = "shared/header.php";
+			$data['page'] = "blog/blog_view.php";
+			
+			$this->load->view('index_tpl', $data);
+		}
+		
+		function entry($bid = "", $title = "")
+		{
+			// Include Models Needed for Blog
+			$this->load->model('Blog_model');
+			$this->load->model('User_model');
+			$this->load->model('Comments_model');
+			
+			// Query Structure
+			$data['query'] = $this->Blog_model->get_current($bid);
+			$data['comments'] = $this->Comments_model->get_all($bid);
+						
+			// Meta Description Tag for Each Entry
+			$entry = $data['query']->row();
+			
+			// Checks string... Outputs only the first $num Words.
+			$num = 35;
+			$post = $entry->B_Entry;
+			$array = explode(" ", $post);
+			
+			if( count($array) <= $num ){ $value = $post; }
+			else{
+				array_splice($array, $num);
+				$meta_tag = implode(" ", $array).".....";
+			}
+			
+			// DATA FOR THE PAGE
+			$data['title'] = "The Blog at MadrigalDesign.com : ".$title;
+			$data['header'] = "shared/header.php";
+			$data['page'] = "blog/entry_view.php";
+			$data['meta_description'] = "
+			<meta name=\"Description\" content=\"Entry From MadrigalDesign's Blog: ".$entry->B_Title." : ".$meta_tag."\">
+			";
+			
+			$this->load->view('index_tpl', $data);
+		}
+		
+		function add_comment()
+		{
+			// Load Models Needed
+			$this->load->model('Comments_model');
+			$this->load->model('User_model');
+			//$this->load->library('Notify');
+			
+			if($this->session->userdata('logged'))
+			{
+				$user = $this->session->userdata('user_info');
+				$ulevel = $this->User_model->get_level($user['U_Type']); 
+			}
+			else{
+				$ulevel = 1;
+			}
+			
+			if($this->input->post('humanoid') == "")
+			{
+				$this->Comments_model->add_post($_POST, $ulevel);
+			}
+			
+			//$this->Notify->c_email($_POST);
+			
+			redirect('blog/entry/'.$_POST['B_ID']);
+		}
+		
+	}
+?>

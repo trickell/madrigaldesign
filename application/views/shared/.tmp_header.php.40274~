@@ -1,0 +1,9 @@
+
+<div id="strip_wrap">
+	<div class="strip_box">
+		<ul>
+			<li><?php echo imageurl('mad_logo.png'); ?></li>
+			<li><h1>Portfolio</h1></li>
+		</ul>
+	</div>
+</div>

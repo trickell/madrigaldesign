@@ -1,0 +1,14 @@
+<div class="content_wrap">
+	<h3>
+		hi, my names john. i'm a web developer
+		and designer out of kentucky. this is my 
+		little "vacation" spot. need something new? <br/> 
+		join me by checking out the links below...
+	</h3>
+	<ul id="nav">
+		<li><h3><?php echo anchor('welcome/port','Portfolio');?></h3></li>
+		<li><h3><?php echo anchor('blog/entries','Blog');?></h3></li>
+		<li><h3><?php echo anchor('welcome/about','About');?></h3></li>
+		<li><h3><?php echo anchor('welcome/contact','Contact');?></h3></li>
+	</ul>
+</div>

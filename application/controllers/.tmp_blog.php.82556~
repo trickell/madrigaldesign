@@ -1,0 +1,35 @@
+<?php
+    class Blog extends Controller
+	{
+		function Blog()
+		{
+			parent :: Controller();
+			
+			//$this->output->enable_profiler(true);
+			$this->load->scaffolding('blog');
+		}
+		
+		function index()
+		{
+			// Include Models Needed for Blog
+			$this->load->model('Blog_model');
+			$this->load->model('User_model');
+			
+			// Query Structure
+			$data['query'] = $this->Blog_model->get_all();
+			
+			// DATA FOR THE PAGE
+			$data['title'] = "The Blog at MadrigalDesign.com : Update News : Tutorials : Source for Entertainment";
+			$data['header'] = "shared/header.php";
+			$data['page'] = "blog/blog_view.php";
+			
+			$this->load->view('index_tpl', $data);
+		}
+		
+		function entry($cid = "", $title = "")
+		{
+			
+		}
+		
+	}
+?>
